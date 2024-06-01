@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One|Dawning+of+a+New+Day|Text+Me+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cherry+Swash:700&display=swap');
+
+/* font-family: 'Dawning of a New Day', cursive;
+font-family: 'Text Me One', sans-serif;
+font-family: 'Bubbler One', sans-serif; */
+:root {
+  --overlay: rgba(255, 255, 255, 0.5);
+  --text-color: #2c3e50;
+  --color-1: #aba104;
+  --color_2: #153607;
+  --color-3: #6d6e71;
+  --menu-h-1: 100px;
+  --menu-h-2: 70px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  background: rgb(240, 255, 215);
+  font-family: 'Bubbler One', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  scroll-behavior: smooth;
+  line-height: 150%;
+  color: var(--text-color, #333);
+  /*    margin: 100px auto 0;*/
+}
+body {
+  margin: var(--menu-h-1) auto 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  line-height: inherit;
+  line-height: 1.2;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.anchor {
+  display: block;
+  height: var(--menu-h-1); /*same height as header*/
+  margin-top: -100px; /*same height as header*/
+  visibility: hidden;
+}
+.container {
+  position: relative;
+}
+#header-bar {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  height: var(--menu-h-1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 1);
+  z-index: 500;
+}
+#header-bar img {
+  height: var(--menu-h-1);
+  width: var(--menu-h-1);
+}
+.menu-bar {
+  position: relative;
+  flex: 1;
+  margin-left: 0.5rem;
+  justify-content: space-around;
+}
+.menu-items {
+  display: flex;
+  width: 100%;
+  max-height: auto;
+  overflow: hidden;
+}
+.menu-items li {
+  margin: 0 0.1rem;
+}
+.menu-items li:not(:last-child) {
+  flex: 0 0 auto; /* don't grow, take up only needed space */
+}
+.menu-items li:last-child {
+  flex: 1 0 auto; /* Grow, don't shrink */
+  /* flex: 1; */
+  text-align: right;
+  justify-content: right;
+}
+.menu-items a {
+  margin: 0 0.5rem;
+  padding: 0.4rem;
+  background: rgb(224, 235, 78);
+  border-radius: 5px;
+}
+.menu-items a:hover {
+  background: #bbb;
+}
+.menu-btn {
+  display: none;
+}
+.content,
+.text {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 90%;
+  padding: 0 2rem;
+  letter-spacing: 0.1rem;
+}
+article.text {
+  color: #000;
+  font-weight: 900;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  /*    transform: translateX(50%);*/
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cherry Swash', cursive;
+}
+article.text h2 {
+  margin-bottom: 1rem;
+}
+.overlay {
+  background: var(--overlay);
+  /*    height: calc(100vh - 100px);*/
+  height: 100%;
+}
+section {
+  position: relative;
+  height: calc(100vh - var(--menu-h-1));
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#section-1 {
+  background-image: url(img/danny-wage-Q4vWchoavUs-unsplash.jpg);
+}
+#section-2 {
+  height: 60vh;
+  background-image: url(img/four-green-yarns-on-chopping-board-2062061.jpg);
+}
+#section-3 {
+  height: 100%;
+}
+#section-4 {
+  /*    height: 70vh;*/
+  background-image: url(img/janko-ferlic-specialdaddy-jjDqU0P0-SM-unsplash.jpg);
+}
+#section-4 article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.8),
+    1px 1px 1px rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+.text {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.text h3 {
+  margin: 0.5rem 0;
+}
+#footer-bar {
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--text-color);
+  color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+}
+#footer-bar img {
+  width: 30px;
+  margin-right: 0.5rem;
+}
+#footer-bar a {
+  display: flex;
+  align-items: center;
+}
+.photo-gallery {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 0.3rem;
+  grid-row-gap: 0.3rem;
+}
+.photo {
+  height: 200px;
+  opacity: 0.9;
+}
+.photo:hover {
+  transform: scale(1.025);
+  opacity: 1;
+  border: none;
+}
+.photo img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.photo-gallery div:nth-child(2) {
+  grid-column: auto / span 2;
+}
+.photo-gallery div:nth-child(10) {
+  grid-column: auto / span 2;
+}
+
+#modal {
+  position: fixed;
+  /*    top: var(--menu-h-2);*/
+  top: 2rem;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: none;
+}
+
+#modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ffffff;
+  /*    height: 100%;*/
+  object-fit: cover;
+  object-position: center;
+}
+
+#modal-content {
+  position: relative;
+  width: 70%;
+  height: 70%;
+}
+#close {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background: #eeeeee;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: arial, sans-serif;
+  text-align: center;
+  font-weight: 900;
+}
+
+@media (min-width: 1190px) {
+  .photo-gallery {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    line-height: 120%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    font-size: 1rem;
+  }
+  body {
+    margin: var(--menu-h-2) auto 0;
+  }
+  #header-bar {
+    height: var(--menu-h-2);
+  }
+  #header-bar img {
+    height: var(--menu-h-2);
+    width: var(--menu-h-2);
+  }
+  .menu-items {
+    max-height: 0;
+  }
+  .menu-icon {
+    padding: 1.5rem;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    z-index: 5;
+  }
+  /*  */
+
+  .menu-icon .nav-icon {
+    background: cadetblue;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background 0.2s ease-out;
+  }
+  .menu-icon .nav-icon::before,
+  .menu-icon .nav-icon::after {
+    content: '';
+    background: cadetblue;
+    display: block;
+    /* as big as the element */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+  }
+  .menu-icon .nav-icon::before {
+    top: 5px;
+  }
+  .menu-icon .nav-icon::after {
+    top: -5px;
+  }
+  /*  */
+  .menu-btn:checked ~ .menu-items {
+    position: fixed;
+    top: 5.2rem;
+    right: 2rem;
+    max-height: 25rem;
+    flex-direction: column;
+    height: 15rem;
+    align-items: flex-end;
+    background: rgba(224, 235, 78, 0.2);
+  }
+  .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .menu-btn:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  .menu-items li {
+    text-align: left;
+  }
+  .menu-items li:not(:last-child) {
+    flex: 1 0 auto;
+  }
+  .menu-items li:last-child {
+    flex: 1 0 auto; /* Grow, don't shrink */
+    /* flex: 1; */
+    text-align: left;
+  }
+  .menu-items a {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .anchor {
+    height: var(--menu-h-2); /*same height as header*/
+    margin-top: -70px; /*same height as header*/
+  }
+  .content,
+  .text {
+    width: 95%;
+    padding: 0 1rem;
+  }
+  section {
+    height: calc(100vh - var(--menu-h-2));
+  }
+  article.text {
+    width: 90%;
+  }
+  .photo-gallery div:nth-child(2) {
+    grid-column: auto / span 1;
+  }
+  .photo-gallery div:nth-child(10) {
+    grid-column: auto / span 1;
+  }
+}
+@media (max-width: 760px) and (orientation: portrait) {
+  .menu-bar a {
+    margin: 0 0.1rem;
+    padding: 0.2rem;
+  }
+  #modal img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 2px;
+  }
+}
